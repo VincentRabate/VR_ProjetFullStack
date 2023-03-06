@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  ID       Int    @id @default(autoincrement())
+  Username String @db.VarChar(40)
+  Email    String @db.VarChar(255)
+  Password String @db.VarChar(255)
+}
+
+model Painter {
+  ID        Int      @id @default(autoincrement())
+  Name      String   @db.VarChar(80)
+  Naissance DateTime @db.DateTime
+  Deces     DateTime @db.DateTime
+  photo     String   @db.VarChar(255)
+  wikipedia String   @db.VarChar(255)
+  // paintings Painting[]
+  // paintingId Int
+}
+
+model Painting {
+  ID     Int    @id @default(autoincrement())
+  Auteur String @db.VarChar(80)
+  Image  String @db.VarChar(255)
+  // painter Painter @relation(fields: [Auteur], references: [Name])
+}

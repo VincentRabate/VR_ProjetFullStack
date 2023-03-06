@@ -1,0 +1,30 @@
+{
+  "name": "vr_projet_fullstack---copy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VincentRabate/VR_ProjetFullStack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VincentRabate/VR_ProjetFullStack/issues"
+  },
+  "homepage": "https://github.com/VincentRabate/VR_ProjetFullStack#readme",
+  "dependencies": {
+    "@prisma/client": "^4.11.0",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "nodemon": "^2.0.21",
+    "prisma": "^4.11.0",
+    "zod": "^3.21.2"
+  }
+}
