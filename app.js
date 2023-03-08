@@ -9,15 +9,3 @@ app.use(express.urlencoded({ extended: true }));
 const port = 3002;
 
 const router = express.Router();
-
-router.get("/", (req, res) => {
-  res.send("page d'accueil");
-});
-
-router.get("/a-propos", (req, res) => {
-  res.send("page à propos");
-});
-
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
-});
