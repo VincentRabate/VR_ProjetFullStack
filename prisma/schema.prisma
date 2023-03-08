@@ -18,19 +18,19 @@ model Users {
 }
 
 model Painter {
-  ID        Int      @id @default(autoincrement())
-  Name      String   @db.VarChar(80)
-  Naissance DateTime @db.DateTime
-  Deces     DateTime @db.DateTime
-  photo     String   @db.VarChar(255)
-  wikipedia String   @db.VarChar(255)
-  // paintings Painting[]
-  // paintingId Int
+  ID        Int        @id @default(autoincrement())
+  Name      String     @db.VarChar(80)
+  Naissance DateTime   @db.DateTime
+  Deces     DateTime   @db.DateTime
+  photo     String     @db.VarChar(255)
+  wikipedia String     @db.VarChar(255)
+  paintings Painting[]
 }
 
 model Painting {
-  ID     Int    @id @default(autoincrement())
-  Auteur String @db.VarChar(80)
-  Image  String @db.VarChar(255)
-  // painter Painter @relation(fields: [Auteur], references: [Name])
+  ID        Int      @id @default(autoincrement())
+  Auteur    String   @db.VarChar(80)
+  Image     String   @db.VarChar(255)
+  Painter   Painter? @relation(fields: [painterID], references: [ID])
+  painterID Int?
 }
